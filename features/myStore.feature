@@ -26,8 +26,8 @@
 
     Cenário: Login sem sucesso: informar no email somente caracteres
         Dado que esteja na página de login
-        Quando inserir somente caracteres no campo email e senha
-        Então deve mostrar mensagem email inválido
+        Quando Quando inserir o email e senha
+        Então não deve logar e mostrar mensagem de erro
 
     Cenário: Login sem sucesso: sem informar o senha
         Dado que esteja na página de login
