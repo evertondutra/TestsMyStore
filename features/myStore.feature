@@ -22,7 +22,7 @@
     Cenário: Login sem sucesso: informar no email somente números
         Dado que esteja na página de login
         Quando Quando inserir o email e senha
-        Então deve mostrar mensagem email inválido
+        Então não deve logar e mostrar mensagem de erro
 
     Cenário: Login sem sucesso: informar no email somente caracteres
         Dado que esteja na página de login
