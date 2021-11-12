@@ -12,12 +12,12 @@
     Cenário: Login sem sucesso: sem informar o email
         Dado que esteja na página de login
         Quando inserir somente a senha
-        Então deve mostrar mensagem da falta do email
+        Então não deve logar e mostrar mensagem de erro
 
     Cenário: Login sem sucesso: informar o email inválido
         Dado que esteja na página de login
-        Quando inserir o email inválido e senha
-        Então deve mostrar mensagem de login inválido
+        Quando inserir o email e senha
+        Então não deve logar e mostrar mensagem de erro
 
     Cenário: Login sem sucesso: informar no email somente números
         Dado que esteja na página de login

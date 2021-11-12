@@ -8,32 +8,43 @@ Test Teardown       Fechar Navegador
 
 *** Test Cases ***
 Cenário: Login com sucesso
+    [Tags]        CENARIO_1
     Dado que esteja na página de login
-    Quando inserir o email e senha
+    Quando inserir o email e senha        evertondutra02@gmail.com        123456
     Então devo logar e estar na página da conta
 
 Cenário: Login sem sucesso: sem informar o email
-    [tags]        errorr
+    [tags]        CENARIO_2
     Dado que esteja na página de login
-    Quando inserir somente a senha
-    Então deve mostrar mensagem da falta do email
+    Quando inserir somente a senha             123456
+    não deve logar e mostrar mensagem de erro        An email address required.
 
+
+Cenário: Login sem sucesso: informar o email inválido
+    [Tags]        CENARIO_3
+    Dado que esteja na página de login
+    Quando inserir o email e senha            eduardo02@gmail.com        123456
+    não deve logar e mostrar mensagem de erro       Authentication failed.
 
 *** Keywords ***
 Dado que esteja na página de login
     Acessar a pagina login
 
 Quando inserir o email e senha
-    Inserir Email
-    Inserir Password
+    [Arguments]          ${EMAIL}         ${SENHA}
+    Inserir Email        ${EMAIL}
+    Inserir Senha        ${SENHA}
     Clicar Botão Sign In
 
 Então devo logar e estar na página da conta
     Conferir se a conta esta logada
 
 Quando inserir somente a senha
-    Inserir Password
+    [Arguments]              ${SENHA}
+    Inserir Senha            ${SENHA}
     Clicar Botão Sign In
 
-Então deve mostrar mensagem da falta do email
-    Conferir msg de Erro
+não deve logar e mostrar mensagem de erro
+    [Arguments]                 ${MSG}
+    Conferir msg de Erro        ${MSG}
+

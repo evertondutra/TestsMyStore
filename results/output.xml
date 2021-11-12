@@ -1,97 +1,311 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.5 on win32)" generated="20211110 14:43:40.200" rpa="false" schemaversion="2">
-<suite id="s1" name="testLoginMyStore" source="D:\Projetos\Robot\tests\testLoginMyStore.robot">
-<test id="s1-t1" name="Cenário: Login sem sucesso: sem informar o email">
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211112 03:27:08.532" rpa="false" schemaversion="2">
+<suite id="s1" name="testLoginMyStore" source="E:\Projetos Robot\TestsMyStore\tests\testLoginMyStore.robot">
+<test id="s1-t1" name="Cenário: Login com sucesso">
 <kw name="Abrir Navegador" library="Resource" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20211110 14:43:41.877" level="INFO">Opening browser 'Google Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
-<status status="PASS" starttime="20211110 14:43:41.875" endtime="20211110 14:43:54.471"/>
+<msg timestamp="20211112 03:27:08.726" level="INFO">Opening browser 'Google Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211112 03:27:08.726" endtime="20211112 03:27:14.053"/>
 </kw>
-<status status="PASS" starttime="20211110 14:43:41.872" endtime="20211110 14:43:54.471"/>
+<status status="PASS" starttime="20211112 03:27:08.725" endtime="20211112 03:27:14.053"/>
 </kw>
 <kw name="Dado que esteja na página de login">
 <kw name="Acessar a pagina login" library="Resource">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${PAGE_LOGIN}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20211110 14:43:54.513" level="INFO">Opening url 'http://automationpractice.com/index.php?controller=authentication&amp;back=my-account'</msg>
-<status status="PASS" starttime="20211110 14:43:54.511" endtime="20211110 14:43:56.605"/>
+<msg timestamp="20211112 03:27:14.054" level="INFO">Opening url 'http://automationpractice.com/index.php?controller=authentication&amp;back=my-account'</msg>
+<status status="PASS" starttime="20211112 03:27:14.054" endtime="20211112 03:27:15.361"/>
 </kw>
-<status status="PASS" starttime="20211110 14:43:54.509" endtime="20211110 14:43:56.606"/>
+<status status="PASS" starttime="20211112 03:27:14.054" endtime="20211112 03:27:15.362"/>
 </kw>
-<status status="PASS" starttime="20211110 14:43:54.502" endtime="20211110 14:43:56.607"/>
+<status status="PASS" starttime="20211112 03:27:14.053" endtime="20211112 03:27:15.362"/>
 </kw>
-<kw name="Quando inserir somente a senha">
-<kw name="Inserir Password" library="Resource">
+<kw name="Quando inserir o email e senha">
+<arg>evertondutra02@gmail.com</arg>
+<arg>123456</arg>
+<kw name="Inserir Email" library="Resource">
+<arg>${EMAIL}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211112 03:27:15.363" level="INFO">Typing text 'evertondutra02@gmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20211112 03:27:15.363" endtime="20211112 03:27:15.476"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:15.363" endtime="20211112 03:27:15.476"/>
+</kw>
+<kw name="Inserir Senha" library="Resource">
+<arg>${SENHA}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:passwd</arg>
-<arg>${PASSWORD}</arg>
+<arg>${SENHA}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20211110 14:43:56.622" level="INFO">Typing text '123456' into text field 'id:passwd'.</msg>
-<status status="PASS" starttime="20211110 14:43:56.619" endtime="20211110 14:43:57.214"/>
+<msg timestamp="20211112 03:27:15.477" level="INFO">Typing text '123456' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20211112 03:27:15.477" endtime="20211112 03:27:15.577"/>
 </kw>
-<status status="PASS" starttime="20211110 14:43:56.616" endtime="20211110 14:43:57.215"/>
+<status status="PASS" starttime="20211112 03:27:15.476" endtime="20211112 03:27:15.577"/>
 </kw>
 <kw name="Clicar Botão Sign In" library="Resource">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id:SubmitLogin</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20211110 14:43:57.220" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
-<status status="PASS" starttime="20211110 14:43:57.218" endtime="20211110 14:43:59.006"/>
+<msg timestamp="20211112 03:27:15.577" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20211112 03:27:15.577" endtime="20211112 03:27:16.964"/>
 </kw>
-<status status="PASS" starttime="20211110 14:43:57.216" endtime="20211110 14:43:59.007"/>
+<status status="PASS" starttime="20211112 03:27:15.577" endtime="20211112 03:27:16.964"/>
 </kw>
-<status status="PASS" starttime="20211110 14:43:56.614" endtime="20211110 14:43:59.008"/>
+<status status="PASS" starttime="20211112 03:27:15.362" endtime="20211112 03:27:16.964"/>
 </kw>
-<kw name="Então deve mostrar mensagem da falta do email">
+<kw name="Então devo logar e estar na página da conta">
+<kw name="Conferir se a conta esta logada" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>class:account</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211112 03:27:16.965" endtime="20211112 03:27:16.992"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${ELEMENT}</var>
+<arg>class:account</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20211112 03:27:16.997" level="INFO">${ELEMENT} = &lt;selenium.webdriver.remote.webelement.WebElement (session="05405c60db44092124427784d3ee8ce6", element="d67fbea7-4a0a-4909-a687-35864f79bbb4")&gt;</msg>
+<status status="PASS" starttime="20211112 03:27:16.993" endtime="20211112 03:27:16.997"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${ELEMENT.text}</arg>
+<arg>Everton Dutra</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211112 03:27:16.997" endtime="20211112 03:27:17.010"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>class:page-heading</arg>
+<arg>MY ACCOUNT</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211112 03:27:17.010" level="INFO">Verifying element 'class:page-heading' contains exact text 'MY ACCOUNT'.</msg>
+<status status="PASS" starttime="20211112 03:27:17.010" endtime="20211112 03:27:17.033"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:16.965" endtime="20211112 03:27:17.033"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:16.964" endtime="20211112 03:27:17.033"/>
+</kw>
+<kw name="Fechar Navegador" library="Resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211112 03:27:17.034" endtime="20211112 03:27:19.241"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:17.034" endtime="20211112 03:27:19.241"/>
+</kw>
+<tag>CENARIO_1</tag>
+<status status="PASS" starttime="20211112 03:27:08.725" endtime="20211112 03:27:19.241"/>
+</test>
+<test id="s1-t2" name="Cenário: Login sem sucesso: sem informar o email">
+<kw name="Abrir Navegador" library="Resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211112 03:27:19.243" level="INFO">Opening browser 'Google Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211112 03:27:19.243" endtime="20211112 03:27:24.592"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:19.243" endtime="20211112 03:27:24.592"/>
+</kw>
+<kw name="Dado que esteja na página de login">
+<kw name="Acessar a pagina login" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${PAGE_LOGIN}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211112 03:27:24.594" level="INFO">Opening url 'http://automationpractice.com/index.php?controller=authentication&amp;back=my-account'</msg>
+<status status="PASS" starttime="20211112 03:27:24.593" endtime="20211112 03:27:25.865"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:24.593" endtime="20211112 03:27:25.865"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:24.593" endtime="20211112 03:27:25.866"/>
+</kw>
+<kw name="Quando inserir somente a senha">
+<arg>123456</arg>
+<kw name="Inserir Senha" library="Resource">
+<arg>${SENHA}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:passwd</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211112 03:27:25.867" level="INFO">Typing text '123456' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20211112 03:27:25.867" endtime="20211112 03:27:25.959"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:25.866" endtime="20211112 03:27:25.960"/>
+</kw>
+<kw name="Clicar Botão Sign In" library="Resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:SubmitLogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211112 03:27:25.960" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20211112 03:27:25.960" endtime="20211112 03:27:27.071"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:25.960" endtime="20211112 03:27:27.071"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:25.866" endtime="20211112 03:27:27.071"/>
+</kw>
+<kw name="Então deve mostrar mensagem de erro">
+<arg>An email address required.</arg>
 <kw name="Conferir msg de Erro" library="Resource">
+<arg>${MSG}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>css:div.alert ol</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20211110 14:43:59.028" endtime="20211110 14:43:59.246"/>
+<status status="PASS" starttime="20211112 03:27:27.073" endtime="20211112 03:27:27.101"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>css:div.alert ol</arg>
-<arg>An email address required.</arg>
+<arg>${MSG}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20211110 14:43:59.246" level="INFO">Verifying element 'css:div.alert ol' contains exact text 'An email address required.'.</msg>
-<status status="PASS" starttime="20211110 14:43:59.246" endtime="20211110 14:43:59.324"/>
+<msg timestamp="20211112 03:27:27.101" level="INFO">Verifying element 'css:div.alert ol' contains exact text 'An email address required.'.</msg>
+<status status="PASS" starttime="20211112 03:27:27.101" endtime="20211112 03:27:27.118"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>css:div.alert p</arg>
 <arg>There is 1 error</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20211110 14:43:59.324" level="INFO">Verifying element 'css:div.alert p' contains exact text 'There is 1 error'.</msg>
-<status status="PASS" starttime="20211110 14:43:59.324" endtime="20211110 14:43:59.417"/>
+<msg timestamp="20211112 03:27:27.118" level="INFO">Verifying element 'css:div.alert p' contains exact text 'There is 1 error'.</msg>
+<status status="PASS" starttime="20211112 03:27:27.118" endtime="20211112 03:27:27.140"/>
 </kw>
-<status status="PASS" starttime="20211110 14:43:59.026" endtime="20211110 14:43:59.417"/>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id:SubmitCreate</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211112 03:27:27.163" level="INFO">Element 'id:SubmitCreate' is displayed.</msg>
+<status status="PASS" starttime="20211112 03:27:27.140" endtime="20211112 03:27:27.163"/>
 </kw>
-<status status="PASS" starttime="20211110 14:43:59.024" endtime="20211110 14:43:59.417"/>
+<status status="PASS" starttime="20211112 03:27:27.072" endtime="20211112 03:27:27.163"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:27.072" endtime="20211112 03:27:27.163"/>
 </kw>
 <kw name="Fechar Navegador" library="Resource" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20211110 14:43:59.425" endtime="20211110 14:44:03.800"/>
+<status status="PASS" starttime="20211112 03:27:27.164" endtime="20211112 03:27:29.300"/>
 </kw>
-<status status="PASS" starttime="20211110 14:43:59.417" endtime="20211110 14:44:03.801"/>
+<status status="PASS" starttime="20211112 03:27:27.164" endtime="20211112 03:27:29.300"/>
 </kw>
-<tag>errorr</tag>
-<status status="PASS" starttime="20211110 14:43:41.868" endtime="20211110 14:44:03.806"/>
+<tag>CENARIO_2</tag>
+<status status="PASS" starttime="20211112 03:27:19.242" endtime="20211112 03:27:29.301"/>
 </test>
-<status status="PASS" starttime="20211110 14:43:40.200" endtime="20211110 14:44:03.816"/>
+<test id="s1-t3" name="Cenário: Login sem sucesso: informar o email inválido">
+<kw name="Abrir Navegador" library="Resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211112 03:27:29.303" level="INFO">Opening browser 'Google Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20211112 03:27:29.303" endtime="20211112 03:27:35.433"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:29.303" endtime="20211112 03:27:35.434"/>
+</kw>
+<kw name="Dado que esteja na página de login">
+<kw name="Acessar a pagina login" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${PAGE_LOGIN}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211112 03:27:35.435" level="INFO">Opening url 'http://automationpractice.com/index.php?controller=authentication&amp;back=my-account'</msg>
+<status status="PASS" starttime="20211112 03:27:35.435" endtime="20211112 03:27:36.537"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:35.435" endtime="20211112 03:27:36.537"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:35.435" endtime="20211112 03:27:36.538"/>
+</kw>
+<kw name="Quando inserir o email e senha">
+<arg>eduardo02@gmail.com</arg>
+<arg>123456</arg>
+<kw name="Inserir Email" library="Resource">
+<arg>${EMAIL}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211112 03:27:36.540" level="INFO">Typing text 'eduardo02@gmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20211112 03:27:36.540" endtime="20211112 03:27:36.660"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:36.539" endtime="20211112 03:27:36.661"/>
+</kw>
+<kw name="Inserir Senha" library="Resource">
+<arg>${SENHA}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:passwd</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211112 03:27:36.661" level="INFO">Typing text '123456' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20211112 03:27:36.661" endtime="20211112 03:27:36.755"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:36.661" endtime="20211112 03:27:36.755"/>
+</kw>
+<kw name="Clicar Botão Sign In" library="Resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:SubmitLogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211112 03:27:36.756" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20211112 03:27:36.756" endtime="20211112 03:27:37.937"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:36.755" endtime="20211112 03:27:37.937"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:36.538" endtime="20211112 03:27:37.937"/>
+</kw>
+<kw name="Então deve mostrar mensagem de erro">
+<arg>Authentication failed.</arg>
+<kw name="Conferir msg de Erro" library="Resource">
+<arg>${MSG}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:div.alert ol</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211112 03:27:37.939" endtime="20211112 03:27:37.969"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css:div.alert ol</arg>
+<arg>${MSG}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211112 03:27:37.969" level="INFO">Verifying element 'css:div.alert ol' contains exact text 'Authentication failed.'.</msg>
+<status status="PASS" starttime="20211112 03:27:37.969" endtime="20211112 03:27:37.990"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css:div.alert p</arg>
+<arg>There is 1 error</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211112 03:27:37.990" level="INFO">Verifying element 'css:div.alert p' contains exact text 'There is 1 error'.</msg>
+<status status="PASS" starttime="20211112 03:27:37.990" endtime="20211112 03:27:38.014"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>id:SubmitCreate</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211112 03:27:38.039" level="INFO">Element 'id:SubmitCreate' is displayed.</msg>
+<status status="PASS" starttime="20211112 03:27:38.014" endtime="20211112 03:27:38.039"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:37.938" endtime="20211112 03:27:38.039"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:37.938" endtime="20211112 03:27:38.039"/>
+</kw>
+<kw name="Fechar Navegador" library="Resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211112 03:27:38.040" endtime="20211112 03:27:40.162"/>
+</kw>
+<status status="PASS" starttime="20211112 03:27:38.040" endtime="20211112 03:27:40.162"/>
+</kw>
+<tag>CENARIO_3</tag>
+<status status="PASS" starttime="20211112 03:27:29.302" endtime="20211112 03:27:40.163"/>
+</test>
+<status status="PASS" starttime="20211112 03:27:08.534" endtime="20211112 03:27:40.164"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">errorr</stat>
+<stat pass="1" fail="0" skip="0">CENARIO_1</stat>
+<stat pass="1" fail="0" skip="0">CENARIO_2</stat>
+<stat pass="1" fail="0" skip="0">CENARIO_3</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="testLoginMyStore">testLoginMyStore</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="testLoginMyStore">testLoginMyStore</stat>
 </suite>
 </statistics>
 <errors>

@@ -5,8 +5,8 @@ Library        SeleniumLibrary
 ${URL}                    http://automationpractice.com/index.php
 ${PAGE_LOGIN}             ${URL}?controller=authentication&back=my-account
 ${BROWSER}                Google Chrome
-${EMAIL}                  evertondutra02@gmail.com
-${PASSWORD}               123456
+#${EMAIL}                  evertondutra02@gmail.com
+#${PASSWORD}               123456
 
 
 *** Keywords ***
@@ -20,10 +20,12 @@ Acessar a pagina login
     Go to      ${PAGE_LOGIN}
 
 Inserir Email
+    [Arguments]        ${EMAIL}
     Input Text    id:email    ${EMAIL}
 
-Inserir Password
-    Input Text    id:passwd    ${PASSWORD}
+Inserir Senha
+    [Arguments]    ${SENHA}
+    Input Text     id:passwd    ${SENHA}
 
 Clicar Botão Sign In
     Click Button    id:SubmitLogin
@@ -35,7 +37,8 @@ Conferir se a conta esta logada
     Element Text Should Be               class:page-heading          MY ACCOUNT
 
 Conferir msg de Erro
+    [Arguments]        ${MSG}
     Wait Until Element Is Visible        css:div.alert ol
-    Element Text Should Be               css:div.alert ol           An email address required.
+    Element Text Should Be               css:div.alert ol           ${MSG}
     Element Text Should Be               css:div.alert p            There is 1 error
-
+    Element Should Be Visible            id:SubmitCreate 
