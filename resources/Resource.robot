@@ -5,9 +5,6 @@ Library        SeleniumLibrary
 ${URL}                    http://automationpractice.com/index.php
 ${PAGE_LOGIN}             ${URL}?controller=authentication&back=my-account
 ${BROWSER}                Google Chrome
-#${EMAIL}                  evertondutra02@gmail.com
-#${PASSWORD}               123456
-
 
 *** Keywords ***
 Abrir Navegador
