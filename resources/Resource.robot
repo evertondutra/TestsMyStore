@@ -11,6 +11,7 @@ Abrir Navegador
     Open Browser        ${URL}      ${BROWSER}      
 
 Fechar Navegador    
+    Capture Page Screenshot
     Close Browser
 
 Acessar a pagina login 

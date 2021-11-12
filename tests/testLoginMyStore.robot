@@ -29,8 +29,15 @@ Cenário: Login sem sucesso: informar o email inválido
 Cenário: Login sem sucesso: informar no email somente números
     [Tags]        CENARIO_4
     Dado que esteja na página de login
-    Quando inserir o email e senha                    145456131        123456
+    Quando inserir o email e senha                    145456131                  123456
     não deve logar e mostrar mensagem de erro         Invalid email address.
+
+Cenário: Login sem sucesso: informar no email somente caracteres
+    [Tags]        CENARIO_5
+    Dado que esteja na página de login
+    Quando inserir o email e senha                    !#@$#$%#$¨¨¨$%&            123456    
+    não deve logar e mostrar mensagem de erro         Invalid email address.
+
 
 *** Keywords ***
 Dado que esteja na página de login
