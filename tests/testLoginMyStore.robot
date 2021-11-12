@@ -16,15 +16,21 @@ Cenário: Login com sucesso
 Cenário: Login sem sucesso: sem informar o email
     [tags]        CENARIO_2
     Dado que esteja na página de login
-    Quando inserir somente a senha             123456
+    Quando inserir somente a senha                   123456
     não deve logar e mostrar mensagem de erro        An email address required.
 
 
 Cenário: Login sem sucesso: informar o email inválido
     [Tags]        CENARIO_3
     Dado que esteja na página de login
-    Quando inserir o email e senha            eduardo02@gmail.com        123456
-    não deve logar e mostrar mensagem de erro       Authentication failed.
+    Quando inserir o email e senha                   eduardo02@gmail.com        123456
+    não deve logar e mostrar mensagem de erro        Authentication failed.
+
+Cenário: Login sem sucesso: informar no email somente números
+    [Tags]        CENARIO_4
+    Dado que esteja na página de login
+    Quando inserir o email e senha                    145456131        123456
+    não deve logar e mostrar mensagem de erro         Invalid email address.
 
 *** Keywords ***
 Dado que esteja na página de login
